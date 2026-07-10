@@ -1,3 +1,6 @@
+from flask import Flask, jsonify
+app = Flask(__name__)
+
 @app.route('/')
 def home():
     return jsonify({
@@ -5,16 +8,6 @@ def home():
         "platform": "ECS Fargate via GitHub Actions",
         "course": "Containers and Serverless",
         "version": "2.0"
-    })
-from flask import Flask, jsonify
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return jsonify({
-        "message": "Hello from WashU Cloud Computing Week 4!",
-        "platform": "ECS Fargate",
-        "course": "Containers and Serverless"
     })
 
 @app.route('/health')
